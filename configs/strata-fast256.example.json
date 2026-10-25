@@ -1,0 +1,28 @@
+{
+  "exe": "<STRATA_ROOT>/Strata/build-halo/strata",
+  "args": [
+    "--pack", "<STRATA_ROOT>/packs/ud-iq4_xs",
+    "--native", "<MODELS>/UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+    "--expert-profile", "data/expert-profile.bin",
+    "--expert-cache", "24576",
+    "--mmap-experts",
+    "--prefill", "16384",
+    "--max-context", "262144",
+    "--kv", "int8",
+    "--spec", "4", "--spec-min-p", "0.5",
+    "--mtp", "<STRATA_ROOT>/mtp/rt", "--lookup-chain", "3", "--mtp-q4", "all"
+  ],
+  "cwd": "<STRATA_ROOT>/Strata",
+  "tokenizer": "<STRATA_ROOT>/packs/ud-iq4_xs/tokenizer",
+  "model_name": "qwen3.8-flash-next-ud-iq4_xs",
+  "log": "<STRATA_ROOT>/logs/strata-fast256.log",
+  "host": "0.0.0.0",
+  "port": 8095,
+  "api_key": "REPLACE_WITH_YOUR_KEY",
+  "fit_max_tokens": true,
+  "env": {
+    "STRATA_HIPBLASLT_TUNING": "<STRATA_ROOT>/Strata/tools/hip/gfx1151-hipblaslt-100401.txt",
+    "STRATA_PF_FUSED": "1", "STRATA_PF_GEMM": "1", "STRATA_HC_UPMIX": "1", "STRATA_PA_FAST": "1",
+    "STRATA_HIP_WMMA": "1", "STRATA_SELECT_WMMA": "1", "STRATA_HC_Q8": "1", "STRATA_PF_SWITCH_MIN_T": "4096"
+  }
+}

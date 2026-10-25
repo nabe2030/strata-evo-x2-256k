@@ -1,0 +1,4 @@
+{"event": "start", "args": {"tag": "p2c", "stream_id": 1, "target": 235000, "chunk": 20000, "max_tokens": 3000, "effort": "high", "offset": 40, "url": "http://<ip>:8095", "hold_turns": 2}, "jst": "2026-10-08 07:49:48 JST"}
+{"event": "turn", "turn": 1, "kind": "grow", "prompt_tokens": 21905, "completion_tokens": 3000, "finish": "length", "ttft_s": 39.24, "elapsed_s": 187.5, "decode_tok_s": 20.2, "cached": 0, "jst": "2026-10-08 07:52:55 JST"}
+{"event": "turn", "turn": 2, "kind": "grow", "prompt_tokens": 38525, "completion_tokens": 3000, "finish": "length", "ttft_s": 46.91, "elapsed_s": 218.7, "decode_tok_s": 17.5, "cached": 0, "jst": "2026-10-08 07:56:34 JST"}
+{"event": "turn", "turn": 3, "kind": "grow", "prompt_tokens": 54897, "completion_tokens": 3000, "finish": "length", "ttft_s": 74.2, "elapsed_s": 228.4, "decode_tok_s": 19.5, "cached": 0, "jst": "2026-10-08 08:00:22 JST"}

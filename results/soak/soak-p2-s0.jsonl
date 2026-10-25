@@ -1,0 +1,6 @@
+{"event": "start", "args": {"tag": "p2", "stream_id": 0, "target": 235000, "chunk": 20000, "max_tokens": 3000, "effort": "high", "offset": 0, "url": "http://<ip>:8095", "hold_turns": 2}, "jst": "2026-10-08 07:22:51 JST"}
+{"event": "turn", "turn": 1, "kind": "grow", "prompt_tokens": 16331, "completion_tokens": 3000, "finish": "length", "ttft_s": 22.17, "elapsed_s": 153.6, "decode_tok_s": 22.8, "cached": 0, "jst": "2026-10-08 07:25:25 JST"}
+{"event": "turn", "turn": 2, "kind": "grow", "prompt_tokens": 28108, "completion_tokens": 3000, "finish": "length", "ttft_s": 15.46, "elapsed_s": 147.0, "decode_tok_s": 22.8, "cached": 16326, "jst": "2026-10-08 07:27:52 JST"}
+{"event": "turn", "turn": 3, "kind": "grow", "prompt_tokens": 32619, "completion_tokens": 3000, "finish": "length", "ttft_s": 7.9, "elapsed_s": 139.9, "decode_tok_s": 22.7, "cached": 28103, "jst": "2026-10-08 07:30:12 JST"}
+{"event": "turn", "turn": 4, "kind": "grow", "prompt_tokens": 37067, "completion_tokens": 3000, "finish": "length", "ttft_s": 11.36, "elapsed_s": 144.2, "decode_tok_s": 22.5, "cached": 32614, "jst": "2026-10-08 07:32:36 JST"}
+{"event": "turn", "turn": 5, "kind": "grow", "prompt_tokens": 42912, "completion_tokens": 3000, "finish": "length", "ttft_s": 12.85, "elapsed_s": 146.1, "decode_tok_s": 22.4, "cached": 37062, "jst": "2026-10-08 07:35:02 JST"}

@@ -1,0 +1,14 @@
+# example unit for scripts/hw-ring.sh (install the script at /usr/local/bin/hw-ring.sh)
+[Unit]
+Description=HW 1Hz ring log (GPU/CPU/mem, fdatasync per line, 72h retention)
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/hw-ring.sh
+Nice=10
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

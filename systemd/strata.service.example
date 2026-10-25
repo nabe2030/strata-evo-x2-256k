@@ -1,0 +1,23 @@
+[Unit]
+Description=Strata (Qwen3.8-Flash-Next) HIP server
+After=network.target
+StartLimitIntervalSec=900
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=<USER>
+WorkingDirectory=<STRATA_ROOT>/Strata
+Environment=SDK=<STRATA_ROOT>/rocm/install
+Environment=ROCM_PATH=<STRATA_ROOT>/rocm/install
+Environment=HIP_PATH=<STRATA_ROOT>/rocm/install
+Environment=HIP_PLATFORM=amd
+Environment=PATH=<STRATA_ROOT>/rocm/install/bin:<STRATA_ROOT>/rocm/install/lib/llvm/bin:/usr/local/bin:/usr/bin:/bin
+Environment=LD_LIBRARY_PATH=<STRATA_ROOT>/rocm/install/lib:<STRATA_ROOT>/rocm/install/lib/rocm_sysdeps/lib:<STRATA_ROOT>/rocm/install/lib/llvm/lib
+ExecStart=<STRATA_ROOT>/venv/bin/python -u -m serve.server --engine strata --config <STRATA_ROOT>/Strata/strata-fast256.json --port 8095
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=60
+
+[Install]
+WantedBy=multi-user.target

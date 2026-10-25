@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "strata/qwen3.8-flash-next-ud-iq4_xs",
+  "enabled_providers": ["strata"],
+  "providers": {
+    "strata": {
+      "name": "Strata Flash-Next UD-IQ4_XS 256K",
+      "env": ["STRATA_KEY"],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": { "baseURL": "http://<SERVER_IP>:8095/v1" },
+      "models": {
+        "qwen3.8-flash-next-ud-iq4_xs": {
+          "name": "Flash-Next UD-IQ4_XS 256K",
+          "limit": { "context": 262144, "output": 32768 }
+        }
+      }
+    }
+  }
+}

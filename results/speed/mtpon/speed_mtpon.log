@@ -1,0 +1,28 @@
+READY fast256m in 43 s
+cold {"prompt_ms": 3095.8, "prompt_n": 2535, "cache_n": 0, "predicted_ms": 317.8, "predicted_n": 10, "wall_clock_s": 3.43, "usage": {"prompt_tokens": 2535, "completion_tokens": 10, "total_tokens": 2545, "prompt_tokens_details": {"cached_tokens": 0}}, "content": "マーケ戦略とJavaとアセンブリ"}
+warm {"prompt_ms": 53.9, "prompt_n": 7, "cache_n": 2528, "predicted_ms": 305.6, "predicted_n": 10, "wall_clock_s": 0.377, "usage": {"prompt_tokens": 2535, "completion_tokens": 10, "total_tokens": 2545, "prompt_tokens_details": {"cached_tokens": 2528}}, "content": "マーケ戦略とJavaとアセンブリ"}
+READY fast256m in 40 s
+cold {"prompt_ms": 19869.9, "prompt_n": 22836, "cache_n": 0, "predicted_ms": 228.3, "predicted_n": 6, "wall_clock_s": 20.183, "usage": {"prompt_tokens": 22836, "completion_tokens": 6, "total_tokens": 22842, "prompt_tokens_details": {"cached_tokens": 0}}, "content": "多様な技術解説集"}
+warm {"prompt_ms": 360.4, "prompt_n": 7, "cache_n": 22829, "predicted_ms": 221.1, "predicted_n": 6, "wall_clock_s": 0.661, "usage": {"prompt_tokens": 22836, "completion_tokens": 6, "total_tokens": 22842, "prompt_tokens_details": {"cached_tokens": 22829}}, "content": "多様な技術解説集"}
+READY fast256m in 44 s
+cold {"prompt_ms": 53077.9, "prompt_n": 63286, "cache_n": 0, "predicted_ms": 227.8, "predicted_n": 7, "wall_clock_s": 53.482, "usage": {"prompt_tokens": 63286, "completion_tokens": 7, "total_tokens": 63293, "prompt_tokens_details": {"cached_tokens": 0}}, "content": "多様な質問への回答集"}
+warm {"prompt_ms": 57.7, "prompt_n": 7, "cache_n": 63279, "predicted_ms": 220.9, "predicted_n": 7, "wall_clock_s": 0.434, "usage": {"prompt_tokens": 63286, "completion_tokens": 7, "total_tokens": 63293, "prompt_tokens_details": {"cached_tokens": 63279}}, "content": "多様な質問への回答集"}
+READY fast256m in 43 s
+trial 1 done 2026-10-07T14:42:23Z
+Successful requests:                     200       
+Failed requests:                         0         
+Output token throughput (tok/s):         42.72     
+Median TTFT (ms):                        4.90      
+Median TPOT (ms):                        24.80     
+trial 2 done 2026-10-07T14:59:41Z
+Successful requests:                     200       
+Failed requests:                         0         
+Output token throughput (tok/s):         42.77     
+Median TTFT (ms):                        4.64      
+Median TPOT (ms):                        24.69     
+trial 3 done 2026-10-07T15:16:59Z
+Successful requests:                     200       
+Failed requests:                         0         
+Output token throughput (tok/s):         42.33     
+Median TTFT (ms):                        4.64      
+Median TPOT (ms):                        24.54     

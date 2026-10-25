@@ -1,0 +1,2728 @@
+{
+ "dataset": "sbintuitions/JamC-QA v1.0 (test split)",
+ "num_shots": 3,
+ "reasoning_effort": "none",
+ "model": "qwen3.8-flash-next-ud-iq4_xs",
+ "total": 300,
+ "correct": 198,
+ "accuracy": 66.0,
+ "avg_latency": 1.299,
+ "avg_tok_s": 22.1,
+ "guard_gate": {
+  "pass": true,
+  "empty_content_count": 0,
+  "finish_length_count": 0,
+  "thinking_contamination_count": 0,
+  "reasoning_nonempty_count": 0
+ },
+ "by_category": {
+  "culture": {
+   "total": 300,
+   "correct": 198,
+   "accuracy": 66.0
+  }
+ },
+ "results": [
+  {
+   "qid": "jamcqa-test-culture-00001",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.317,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00002",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.214,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00003",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.238,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00004",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.222,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00005",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.224,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00006",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.24,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00007",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.268,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00008",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.272,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00009",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.309,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00010",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.383,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00011",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.317,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00012",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.317,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00013",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.291,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00014",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.283,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00015",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.342,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00016",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.38,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00017",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.303,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00018",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.301,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00019",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.359,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00020",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.344,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00021",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.374,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00022",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.313,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00023",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.249,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00024",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.29,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00025",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.325,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00026",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.296,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00027",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.3,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00028",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.394,
+   "tok_s": 21.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00029",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.314,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00030",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.364,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00031",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.306,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00032",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.252,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00033",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.328,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00034",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.317,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00035",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.439,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00036",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.402,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00037",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.348,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00038",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.363,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00039",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.287,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00040",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.305,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00041",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.338,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00042",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.304,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00043",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.355,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00044",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.286,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00045",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.312,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00046",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.319,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00047",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.294,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00048",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.295,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00049",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.299,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00050",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.328,
+   "tok_s": 24.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00051",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.304,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00052",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.287,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00053",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.273,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00054",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.287,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00055",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.325,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00056",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.333,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00057",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.324,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00058",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.292,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00059",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.305,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00060",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.295,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00061",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.378,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00062",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.283,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00063",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.289,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00064",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.312,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00065",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.362,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00066",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.283,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00067",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.287,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00068",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.28,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00069",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.305,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00070",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.28,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00071",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.307,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00072",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.281,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00073",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.267,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00074",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.306,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00075",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.28,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00076",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.323,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00077",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.277,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00078",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.341,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00079",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.33,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00080",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.3,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00081",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.29,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00082",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.319,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00083",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.399,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00084",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.265,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00085",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.261,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00086",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.26,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00087",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.278,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00088",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.264,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00089",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.272,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00090",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.281,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00091",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.32,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00092",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.289,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00093",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.304,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00094",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.297,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00095",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.336,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00096",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.298,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00097",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.329,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00098",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.316,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00099",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.322,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00100",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.334,
+   "tok_s": 21.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00101",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.315,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00102",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.286,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00103",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.291,
+   "tok_s": 24.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00104",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.317,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00105",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.29,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00106",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.285,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00107",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.305,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00108",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.283,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00109",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.301,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00110",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.34,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00111",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.331,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00112",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.279,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00113",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.299,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00114",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.277,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00115",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.28,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00116",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.266,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00117",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.274,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00118",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.281,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00119",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.279,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00120",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.309,
+   "tok_s": 24.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00121",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.278,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00122",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.268,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00123",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.325,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00124",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.307,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00125",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.306,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00126",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.338,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00127",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.369,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00128",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.275,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00129",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.281,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00130",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.32,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00131",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.35,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00132",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.265,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00133",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.332,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00134",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.315,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00135",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.284,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00136",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.329,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00137",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.278,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00138",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.272,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00139",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.272,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00140",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.284,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00141",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.314,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00142",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.286,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00143",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.279,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00144",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.351,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00145",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.281,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00146",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.309,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00147",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.284,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00148",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.316,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00149",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.297,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00150",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.416,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00151",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.335,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00152",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.257,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00153",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.273,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00154",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.28,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00155",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.268,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00156",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.28,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00157",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.261,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00158",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.279,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00159",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.296,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00160",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.302,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00161",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.281,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00162",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.31,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00163",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.29,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00164",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.282,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00165",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.266,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00166",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.311,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00167",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.255,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00168",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.268,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00169",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.26,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00170",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.275,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00171",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.287,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00172",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.323,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00173",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.307,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00174",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.279,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00175",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.317,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00176",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.284,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00177",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.283,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00178",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.291,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00179",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.297,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00180",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.28,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00181",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.311,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00182",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.29,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00183",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.292,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00184",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.319,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00185",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.332,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00186",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.286,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00187",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.313,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00188",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.264,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00189",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.286,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00190",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.277,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00191",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.296,
+   "tok_s": 24.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00192",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.309,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00193",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.317,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00194",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.248,
+   "tok_s": 24.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00195",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.289,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00196",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.285,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00197",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.338,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00198",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.264,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00199",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.317,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00200",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.299,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00201",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.333,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00202",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.339,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00203",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.274,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00204",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.296,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00205",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.326,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00206",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.33,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00207",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.299,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00208",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.29,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00209",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.261,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00210",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.287,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00211",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.295,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00212",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.361,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00213",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.284,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00214",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.299,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00215",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.277,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00216",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.287,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00217",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.321,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00218",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.273,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00219",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.28,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00220",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.285,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00221",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.277,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00222",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.265,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00223",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.27,
+   "tok_s": 21.0
+  },
+  {
+   "qid": "jamcqa-test-culture-00224",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.263,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00225",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.266,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00226",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.34,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00227",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.314,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00228",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.304,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00229",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.315,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00230",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.296,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00231",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.316,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00232",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.335,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00233",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.313,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00234",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.277,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00235",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.279,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00236",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.291,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00237",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.286,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00238",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.252,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00239",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.258,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00240",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.265,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00241",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.272,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00242",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.278,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00243",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.278,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00244",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.265,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00245",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.276,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00246",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.253,
+   "tok_s": 24.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00247",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.268,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00248",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.303,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00249",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.324,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00250",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.308,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00251",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.262,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00252",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.284,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00253",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.309,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00254",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.275,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00255",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.313,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00256",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.348,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00257",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.316,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00258",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.31,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00259",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.28,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00260",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.319,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00261",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.309,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00262",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.296,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00263",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.299,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00264",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.267,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00265",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.316,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00266",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.344,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00267",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.342,
+   "tok_s": 21.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00268",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.308,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00269",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.288,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00270",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.333,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00271",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.335,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00272",
+   "category": "culture",
+   "difficulty": 7,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.325,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00273",
+   "category": "culture",
+   "difficulty": 4,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.268,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00274",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.287,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00275",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.337,
+   "tok_s": 21.5
+  },
+  {
+   "qid": "jamcqa-test-culture-00276",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.269,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00277",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.302,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00278",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.267,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00279",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.286,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00280",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.287,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00281",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.301,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00282",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.263,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00283",
+   "category": "culture",
+   "difficulty": 3,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.273,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00284",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.303,
+   "tok_s": 21.1
+  },
+  {
+   "qid": "jamcqa-test-culture-00285",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 2,
+   "correct": false,
+   "latency": 1.279,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00286",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.284,
+   "tok_s": 21.2
+  },
+  {
+   "qid": "jamcqa-test-culture-00287",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.277,
+   "tok_s": 24.6
+  },
+  {
+   "qid": "jamcqa-test-culture-00288",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.27,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00289",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.356,
+   "tok_s": 24.8
+  },
+  {
+   "qid": "jamcqa-test-culture-00290",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 2,
+   "correct": true,
+   "latency": 1.289,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00291",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.269,
+   "tok_s": 24.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00292",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 1,
+   "correct": true,
+   "latency": 1.272,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00293",
+   "category": "culture",
+   "difficulty": 1,
+   "pred": 1,
+   "correct": false,
+   "latency": 1.268,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00294",
+   "category": "culture",
+   "difficulty": 0,
+   "pred": 3,
+   "correct": false,
+   "latency": 1.302,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00295",
+   "category": "culture",
+   "difficulty": 5,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.319,
+   "tok_s": 21.4
+  },
+  {
+   "qid": "jamcqa-test-culture-00296",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.264,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00297",
+   "category": "culture",
+   "difficulty": 6,
+   "pred": 0,
+   "correct": false,
+   "latency": 1.306,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00298",
+   "category": "culture",
+   "difficulty": 2,
+   "pred": 0,
+   "correct": true,
+   "latency": 1.313,
+   "tok_s": 24.7
+  },
+  {
+   "qid": "jamcqa-test-culture-00299",
+   "category": "culture",
+   "difficulty": 9,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.285,
+   "tok_s": 21.3
+  },
+  {
+   "qid": "jamcqa-test-culture-00300",
+   "category": "culture",
+   "difficulty": 8,
+   "pred": 3,
+   "correct": true,
+   "latency": 1.31,
+   "tok_s": 21.3
+  }
+ ],
+ "note": "Question text, gold answers and model response text removed; ids, predictions and correctness kept."
+}

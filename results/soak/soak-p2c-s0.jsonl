@@ -1,0 +1,5 @@
+{"event": "start", "args": {"tag": "p2c", "stream_id": 0, "target": 235000, "chunk": 20000, "max_tokens": 3000, "effort": "high", "offset": 0, "url": "http://<ip>:8095", "hold_turns": 2}, "jst": "2026-10-08 07:49:48 JST"}
+{"event": "turn", "turn": 1, "kind": "grow", "prompt_tokens": 16341, "completion_tokens": 3000, "finish": "length", "ttft_s": 13.71, "elapsed_s": 163.1, "decode_tok_s": 20.1, "cached": 0, "jst": "2026-10-08 07:52:31 JST"}
+{"event": "turn", "turn": 2, "kind": "grow", "prompt_tokens": 34624, "completion_tokens": 3000, "finish": "length", "ttft_s": 24.21, "elapsed_s": 188.2, "decode_tok_s": 18.3, "cached": 16336, "jst": "2026-10-08 07:55:39 JST"}
+{"event": "turn", "turn": 3, "kind": "grow", "prompt_tokens": 55047, "completion_tokens": 3000, "finish": "length", "ttft_s": 61.33, "elapsed_s": 240.5, "decode_tok_s": 16.7, "cached": 0, "jst": "2026-10-08 07:59:39 JST"}
+{"event": "turn", "turn": 4, "kind": "grow", "prompt_tokens": 74478, "completion_tokens": 3000, "finish": "length", "ttft_s": 27.36, "elapsed_s": 222.0, "decode_tok_s": 15.4, "cached": 55042, "jst": "2026-10-08 08:03:21 JST"}

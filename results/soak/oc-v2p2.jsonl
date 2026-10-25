@@ -1,0 +1,4 @@
+{"event": "start", "ver": "V2", "wrapper": "<HOME>/oc/oc2", "cwd": "<HOME>/oc/target2", "jst": "2026-10-08 04:08:57 JST"}
+{"event": "prompt", "n": 1, "rc": 0, "elapsed_s": 1551.2, "ctx_before": 0, "ctx_after": 123342, "json_lines": 169, "tool_events": 184, "err": "", "jst": "2026-10-08 04:34:48 JST"}
+{"event": "prompt", "n": 2, "rc": 0, "elapsed_s": 2036.9, "ctx_before": 123342, "ctx_after": 181653, "json_lines": 110, "tool_events": 124, "err": "", "jst": "2026-10-08 05:08:45 JST"}
+{"event": "prompt", "n": 3, "rc": 0, "elapsed_s": 1433.7, "ctx_before": 181653, "ctx_after": 167030, "json_lines": 116, "tool_events": 100, "err": "", "jst": "2026-10-08 05:32:39 JST"}
