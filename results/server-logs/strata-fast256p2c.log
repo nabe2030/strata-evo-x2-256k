@@ -1,0 +1,503 @@
+[strata] 2026-10-07 23:04:26 engine started: <STRATA_ROOT>/Strata/build-halo/strata --serve --pack <STRATA_ROOT>/packs/ud-iq4_xs --native <MODELS>/qwen38-flash-next-iq4xs/UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf --expert-profile data/expert-profile.bin --expert-cache 24576 --prefill 16384 --max-context 262144 --kv int8 --spec 4 --spec-min-p 0.5 --mtp <STRATA_ROOT>/mtp/rt --lookup-chain 3 --mtp-q4 all --mmap-experts --prompt-cache 16 --batch 2
+strata: gfx1151 (Strix Halo): 18 exact speed switches on by default (STRATA_GFX1151_DEFAULTS=0 turns them off; a switch you set is kept): GDN_HEAD GDN_PP GDN_CONVL2 GDN_NOY CVEC_FUSE HCD_EXACT PF_PAD Q8_PACKED Q6_PACKED MMVF_ROWS ATTN_LANECELL EXPERT_V2 TSUM LFUSE GDN_SPLIT QFUSE PLE_BATCH SH_STREAM
+strata generate: PCIe probe: 81.3 GB/s host->device (best of 81.3 81.3 81.3 81.3) -> pcie_frac 0.55 (default 0.55)
+strata generate: native pack: <STRATA_ROOT>/packs/ud-iq4_xs experts (largest blob 3.48 MB), token embedding Q8_0 in mapped host memory (644 MiB, 0.4 s)
+strata generate: 1416 MiB of weights loaded from <STRATA_ROOT>/packs/ud-iq4_xs in 0.7 s (303 canonical tensors skipped: served natively)
+native dense: STRATA_Q8_PACKED=1 packed 84 Q8_0 matrices for decode (+1912.5 MiB)
+strata: STRATA_HC_Q8=1: 0.63 GiB of Q8_0 hyper-connection projections for the verify read
+strata generate: 495 native projection matrices, 3619.14 MiB of weights, in 3.4 s
+strata generate: the SSD is kept awake while rows are read: one page of the table after 100 ms without a read, until 60 s after the last request (STRATA_SSD_KEEPALIVE=0 turns it off)
+strata generate: profile data/expert-profile.bin: 24576 ranked pairs, built for 24576 slots
+strata generate: PLE on, table 320001536 rows of <MODELS>/qwen38-flash-next-iq4xs/UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf
+strata generate: --batch: 2 slot sessions on CUDA0 (3.65 GiB each); 77.64 GiB free
+strata generate: --batch 2: the slot sessions take 7.31 GiB of VRAM on CUDA0 that the expert cache would otherwise hold
+strata mtp: --mtp-q4: 10 projections as Q4_0 (37.3 MiB)
+strata mtp: draft layer loaded, 1136 MiB of VRAM (experts 675, dense 111), files read in 0.46 s (1724 MiB/s)
+strata: STRATA_Q6_PACKED=1 packed the output head (248320 x 2560, +497.3 MiB)
+strata generate: experimental native Q5_K head, 521472000 bytes, in 0.5 s
+strata generate: GPU 0: AMD Radeon 8060S Graphics (gfx1151)
+strata generate: experts via mmap (--mmap-experts; the GGUF shards in place, no experts.bin)
+strata generate: CPU pool tasks/phase: 48 (automatic), participating threads: 16
+strata generate: 15 pool workers on logical processors 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15, the host thread on 0 (draining too) (--host-core first)
+strata generate: expert cache 24576 slots, 55.43 GiB of VRAM; policy is
+strata generate: the GPU computes the experts in the cache; it rounds differently from the CPU,
+                 so a reply can differ slightly from a run without the cache (same quality:
+                 bench/results/2026-09-27-cache-parity).
+                 PROFILE, ranked by routing frequency, no eviction.
+strata generate: the profile fill asks for 256 pairs ahead (STRATA_FILL_AHEAD)
+strata generate: pre-filled 24576 of 24576 slots from the profile in 31.7 s (1880 MB/s); slot 0 verified
+strata generate: routing-aware prefetch of the file tier on (the next layer's router)
+strata generate: R4 hit path ON - resident experts are computed on the GPU
+strata generate: 15 expert-pool workers + the host thread
+strata generate: session is up (engine 0.1.40.2)
+strata generate: token graph hit path: 24576 resident experts, decided on the device
+strata serve: the prompt path borrows 2881 CUDA0 cache slots (6.50 GiB)
+prefill gemm: hipBLASLt tuning enabled (90 rows, gfx1151, version 100401)
+strata hc: CUDA0: the hyper-connection read runs as staged (the norm per token and stream, the down projection's activations staged ahead by cp.async); checked bit for bit against the plain read on this card (STRATA_HC_SPLIT=1 or 0 for the earlier ones)
+strata verify: window up to 7 tokens, 94.2 MiB of device buffers (100% VRAM resident: zero-doorbell graph)
+strata mtp: draft head over 106299 tokens (212.9 MiB)
+strata mtp: --mtp-q4: draft head over 106299 tokens as Q4_0 (146.0 MiB read per step, was 212.9)
+strata verify: batch windows of up to 2 sequences (layers [0, 48))
+strata serve: 20242 MiB of VRAM free with everything loaded
+strata: prompt experts on the fused int8 kernels (STRATA_PF_FUSED=1, #136)
+strata: STRATA_HIP_WMMA: the prompt attention on matrix cores on (gfx1151)
+strata verify: capturing the 4-token window (20212 MiB of VRAM free)
+strata verify: captured the 4-token window (upload no error, sync no error)
+strata verify: capturing the 1-token window (20178 MiB of VRAM free)
+strata verify: captured the 1-token window (upload no error, sync no error)
+strata serve: prompt 16341 tokens = 0 reused + 16341 read in 14077 ms (1160.8 tok/s), 1 generated in 46 ms (22.0 tok/s), drafts accepted 0 of 0, 1 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 73463.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 68100.9 MB from storage (6340 major faults) for 73463.1 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 16342 tokens (copied in 61.6 ms)
+strata serve: prompt 16342 tokens = 16341 reused + 1 read in 0 ms (47826.3 tok/s), 1 generated in 32 ms (31.1 tok/s), drafts accepted 0 of 0, 1 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 73463.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: captured the batch window over slots 0
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: captured the batch window over slots 0
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 2 parts, the slots decoding 6874 ms between them
+strata batch: slot 1 takes 21905 tokens (copied in 72.6 ms)
+strata serve: prompt 21905 tokens = 0 reused + 21905 read in 26434 ms (828.7 tok/s), 1 generated in 32 ms (30.9 tok/s), drafts accepted 0 of 0, 2 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 95254.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 685.7 MB from storage (8 major faults) for 21791.3 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: captured the batch window over slots 0,1
+strata verify: captured the batch window over slots 1
+strata batch: 3001 windows, avg 1.94 rows, 43.49 ms/window = run 40.17 (CUDA0 GPU-reach wait 1.92 + CPU experts 0.08) + commit 3.32 + emit 0.00; per layer-window: CPU experts 0.01, VRAM hits 0.59, PCIe 0.00; 38.7 rows/s over 150188 ms of wall time (admissions included)
+strata batch: slot 1 gave back 24722 tokens of this conversation (all it holds) in 73.8 ms
+strata serve: prompt 24723 tokens = 24722 reused + 1 read in 74 ms (13.5 tok/s), 1 generated in 40 ms (25.1 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 95254.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 176.3 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 24724 tokens (copied in 56.8 ms)
+strata serve: prompt 24724 tokens = 24723 reused + 1 read in 0 ms (64599.5 tok/s), 1 generated in 32 ms (30.8 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 95254.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 gave back 16336 tokens of this conversation (its turn checkpoint) in 40.1 ms
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: captured the batch window over slots 1
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 2 parts, the slots decoding 7083 ms between them
+strata batch: slot 0 takes 34624 tokens (copied in 85.9 ms)
+strata serve: prompt 34624 tokens = 16336 reused + 18288 read in 24580 ms (744.0 tok/s), 1 generated in 32 ms (30.8 tok/s), drafts accepted 0 of 0, 3 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 125064.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 457.9 MB from storage (4 major faults) for 29810.2 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 182 windows, avg 1.04 rows, 41.16 ms/window = run 39.36 (CUDA0 GPU-reach wait 27.11 + CPU experts 7.37) + commit 1.80 + emit 0.01; per layer-window: CPU experts 0.98, VRAM hits 8.47, PCIe 0.00; 7.5 rows/s over 25112 ms of wall time (admissions included)
+strata batch: slot 0 gave back 34633 tokens of this conversation (all it holds) in 74.8 ms
+strata serve: prompt 34634 tokens = 34633 reused + 1 read in 75 ms (13.4 tok/s), 1 generated in 41 ms (24.4 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 125064.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.1 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 34635 tokens (copied in 59.2 ms)
+strata serve: prompt 34635 tokens = 34634 reused + 1 read in 0 ms (44093.7 tok/s), 1 generated in 32 ms (30.8 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 125064.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 3 parts, the slots decoding 13620 ms between them
+strata batch: slot 1 takes 38525 tokens (copied in 79.7 ms)
+strata serve: prompt 38525 tokens = 0 reused + 38525 read in 47020 ms (819.3 tok/s), 1 generated in 33 ms (30.6 tok/s), drafts accepted 0 of 0, 3 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 154526.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 533.0 MB from storage (0 major faults) for 29462.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2991 windows, avg 1.88 rows, 43.51 ms/window = run 40.28 (CUDA0 GPU-reach wait 3.83 + CPU experts 0.15) + commit 3.22 + emit 0.00; per layer-window: CPU experts 0.02, VRAM hits 1.18, PCIe 0.00; 34.3 rows/s over 163647 ms of wall time (admissions included)
+strata batch: slot 1 gave back 41155 tokens of this conversation (all it holds) in 80.8 ms
+strata serve: prompt 41156 tokens = 41155 reused + 1 read in 81 ms (12.4 tok/s), 1 generated in 37 ms (27.1 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 154526.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 178.3 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 41157 tokens (copied in 68.0 ms)
+strata serve: prompt 41157 tokens = 41156 reused + 1 read in 0 ms (47666.7 tok/s), 1 generated in 32 ms (30.8 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 154526.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata batch: 367 windows, avg 1.00 rows, 38.85 ms/window = run 37.13 (CUDA0 GPU-reach wait 31.09 + CPU experts 2.87) + commit 1.72 + emit 0.00; per layer-window: CPU experts 0.39, VRAM hits 9.58, PCIe 0.00; 6.7 rows/s over 55127 ms of wall time (admissions included)
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 4 parts, the slots decoding 14222 ms between them
+strata batch: slot 0 takes 55047 tokens (copied in 96.9 ms)
+strata serve: prompt 55047 tokens = 0 reused + 55047 read in 61473 ms (895.5 tok/s), 1 generated in 33 ms (30.3 tok/s), drafts accepted 0 of 0, 4 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 194839.9 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 608.8 MB from storage (0 major faults) for 40313.3 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 4 parts, the slots decoding 20440 ms between them
+strata batch: slot 1 takes 54897 tokens (copied in 93.7 ms)
+strata serve: prompt 54897 tokens = 0 reused + 54897 read in 67470 ms (813.7 tok/s), 1 generated in 33 ms (30.3 tok/s), drafts accepted 0 of 0, 4 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 232245.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 633.0 MB from storage (0 major faults) for 37405.9 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 3002 windows, avg 1.82 rows, 43.96 ms/window = run 40.83 (CUDA0 GPU-reach wait 5.74 + CPU experts 0.23) + commit 3.12 + emit 0.00; per layer-window: CPU experts 0.04, VRAM hits 1.73, PCIe 0.00; 30.5 rows/s over 179124 ms of wall time (admissions included)
+strata batch: slot 1 gave back 57366 tokens of this conversation (all it holds) in 249.7 ms
+strata serve: prompt 57367 tokens = 57366 reused + 1 read in 250 ms (4.0 tok/s), 1 generated in 39 ms (25.6 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 232245.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 168.7 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 57368 tokens (copied in 217.9 ms)
+strata serve: prompt 57368 tokens = 57367 reused + 1 read in 0 ms (29508.1 tok/s), 1 generated in 33 ms (30.2 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 232245.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 gave back 55042 tokens of this conversation (its turn checkpoint) in 86.8 ms
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 2 parts, the slots decoding 7409 ms between them
+strata batch: slot 0 takes 74478 tokens (copied in 283.5 ms)
+strata serve: prompt 74478 tokens = 55042 reused + 19436 read in 26727 ms (727.2 tok/s), 1 generated in 33 ms (30.1 tok/s), drafts accepted 0 of 0, 3 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 254577.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 692.6 MB from storage (0 major faults) for 22331.6 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 530 windows, avg 1.63 rows, 42.78 ms/window = run 39.99 (CUDA0 GPU-reach wait 11.72 + CPU experts 0.52) + commit 2.79 + emit 0.00; per layer-window: CPU experts 0.08, VRAM hits 3.57, PCIe 0.00; 20.4 rows/s over 42313 ms of wall time (admissions included)
+strata batch: slot 0 gave back 74814 tokens of this conversation (all it holds) in 292.7 ms
+strata serve: prompt 74815 tokens = 74814 reused + 1 read in 293 ms (3.4 tok/s), 1 generated in 38 ms (26.6 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 254577.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 21.9 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 74816 tokens (copied in 276.7 ms)
+strata serve: prompt 74816 tokens = 74815 reused + 1 read in 0 ms (28711.7 tok/s), 1 generated in 33 ms (30.0 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 254577.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 5 parts, the slots decoding 27549 ms between them
+strata batch: slot 1 takes 71857 tokens (copied in 261.7 ms)
+strata serve: prompt 71857 tokens = 0 reused + 71857 read in 89418 ms (803.6 tok/s), 1 generated in 33 ms (30.2 tok/s), drafts accepted 0 of 0, 5 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 299667.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 915.7 MB from storage (0 major faults) for 45090.4 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2663 windows, avg 1.73 rows, 43.79 ms/window = run 40.82 (CUDA0 GPU-reach wait 8.73 + CPU experts 0.32) + commit 2.96 + emit 0.00; per layer-window: CPU experts 0.05, VRAM hits 2.62, PCIe 0.00; 25.8 rows/s over 178778 ms of wall time (admissions included)
+strata batch: slot 1 gave back 73807 tokens of this conversation (all it holds) in 344.6 ms
+strata serve: prompt 73808 tokens = 73807 reused + 1 read in 345 ms (2.9 tok/s), 1 generated in 42 ms (24.1 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 299667.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 151.9 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 73809 tokens (copied in 277.8 ms)
+strata serve: prompt 73809 tokens = 73808 reused + 1 read in 0 ms (33899.5 tok/s), 1 generated in 33 ms (30.2 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 299667.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 6 parts, the slots decoding 34930 ms between them
+strata batch: slot 0 takes 94075 tokens (copied in 320.3 ms)
+strata serve: prompt 94075 tokens = 0 reused + 94075 read in 116795 ms (805.5 tok/s), 1 generated in 34 ms (29.7 tok/s), drafts accepted 0 of 0, 6 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 356641.2 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 1572.6 MB from storage (0 major faults) for 56973.4 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 1050 windows, avg 1.15 rows, 40.46 ms/window = run 38.46 (CUDA0 GPU-reach wait 26.93 + CPU experts 2.30) + commit 2.00 + emit 0.00; per layer-window: CPU experts 0.48, VRAM hits 7.94, PCIe 0.00; 9.7 rows/s over 124706 ms of wall time (admissions included)
+strata batch: slot 0 gave back 94240 tokens of this conversation (all it holds) in 337.4 ms
+strata serve: prompt 94241 tokens = 94240 reused + 1 read in 338 ms (3.0 tok/s), 1 generated in 42 ms (23.8 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 356641.2 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 14.2 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 94242 tokens (copied in 324.8 ms)
+strata serve: prompt 94242 tokens = 94241 reused + 1 read in 0 ms (30203.3 tok/s), 1 generated in 34 ms (29.7 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 356641.2 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 6 parts, the slots decoding 35140 ms between them
+strata batch: slot 1 takes 90624 tokens (copied in 303.5 ms)
+strata serve: prompt 90624 tokens = 0 reused + 90624 read in 114257 ms (793.2 tok/s), 1 generated in 35 ms (28.3 tok/s), drafts accepted 0 of 0, 6 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 409558.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 1753.2 MB from storage (0 major faults) for 52916.9 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2834 windows, avg 1.68 rows, 44.01 ms/window = run 41.11 (CUDA0 GPU-reach wait 10.29 + CPU experts 0.62) + commit 2.89 + emit 0.00; per layer-window: CPU experts 0.15, VRAM hits 3.00, PCIe 0.00; 23.4 rows/s over 204186 ms of wall time (admissions included)
+strata batch: slot 1 gave back 92567 tokens of this conversation (all it holds) in 339.4 ms
+strata serve: prompt 92568 tokens = 92567 reused + 1 read in 340 ms (2.9 tok/s), 1 generated in 42 ms (23.6 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 409558.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 162.4 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 92569 tokens (copied in 319.6 ms)
+strata serve: prompt 92569 tokens = 92568 reused + 1 read in 0 ms (33058.9 tok/s), 1 generated in 34 ms (29.7 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 409558.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata batch: 1054 windows, avg 1.00 rows, 39.84 ms/window = run 38.10 (CUDA0 GPU-reach wait 32.28 + CPU experts 2.73) + commit 1.73 + emit 0.01; per layer-window: CPU experts 0.53, VRAM hits 9.46, PCIe 0.00; 8.3 rows/s over 126958 ms of wall time (admissions included)
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 7 parts, the slots decoding 41954 ms between them
+strata batch: slot 0 takes 114043 tokens (copied in 307.3 ms)
+strata serve: prompt 114043 tokens = 0 reused + 114043 read in 142442 ms (800.6 tok/s), 1 generated in 34 ms (29.7 tok/s), drafts accepted 0 of 0, 7 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 476270.9 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 2353.3 MB from storage (0 major faults) for 66712.8 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 7 parts, the slots decoding 42712 ms between them
+strata batch: slot 1 takes 109036 tokens (copied in 303.6 ms)
+strata serve: prompt 109036 tokens = 0 reused + 109036 read in 138990 ms (784.5 tok/s), 1 generated in 34 ms (29.3 tok/s), drafts accepted 0 of 0, 7 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 541008.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 2437.3 MB from storage (0 major faults) for 64737.5 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 3002 windows, avg 1.64 rows, 44.43 ms/window = run 41.60 (CUDA0 GPU-reach wait 11.62 + CPU experts 0.92) + commit 2.82 + emit 0.00; per layer-window: CPU experts 0.18, VRAM hits 3.36, PCIe 0.00; 21.5 rows/s over 229994 ms of wall time (admissions included)
+strata batch: slot 1 gave back 110974 tokens of this conversation (all it holds) in 310.2 ms
+strata serve: prompt 110975 tokens = 110974 reused + 1 read in 310 ms (3.2 tok/s), 1 generated in 43 ms (23.4 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 541008.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 156.1 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 110976 tokens (copied in 284.1 ms)
+strata serve: prompt 110976 tokens = 110975 reused + 1 read in 0 ms (27949.4 tok/s), 1 generated in 34 ms (29.4 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 541008.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 gave back 114038 tokens of this conversation (its turn checkpoint) in 274.3 ms
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 2 parts, the slots decoding 7881 ms between them
+strata batch: slot 0 takes 132293 tokens (copied in 464.9 ms)
+strata serve: prompt 132293 tokens = 114038 reused + 18255 read in 27287 ms (669.0 tok/s), 1 generated in 34 ms (29.3 tok/s), drafts accepted 0 of 0, 3 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 564559.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 632.5 MB from storage (0 major faults) for 23551.1 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 1062 windows, avg 1.81 rows, 45.90 ms/window = run 42.79 (CUDA0 GPU-reach wait 5.99 + CPU experts 0.56) + commit 3.10 + emit 0.00; per layer-window: CPU experts 0.10, VRAM hits 1.74, PCIe 0.00; 28.0 rows/s over 68660 ms of wall time (admissions included)
+strata batch: slot 0 gave back 133159 tokens of this conversation (all it holds) in 501.7 ms
+strata serve: prompt 133160 tokens = 133159 reused + 1 read in 502 ms (2.0 tok/s), 1 generated in 43 ms (23.2 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 564559.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 60.4 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 133161 tokens (copied in 474.6 ms)
+strata serve: prompt 133161 tokens = 133160 reused + 1 read in 0 ms (26803.2 tok/s), 1 generated in 34 ms (29.0 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 564559.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 8 parts, the slots decoding 49913 ms between them
+strata batch: slot 1 takes 128140 tokens (copied in 336.7 ms)
+strata serve: prompt 128140 tokens = 0 reused + 128140 read in 163160 ms (785.4 tok/s), 1 generated in 34 ms (29.1 tok/s), drafts accepted 0 of 0, 8 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 639014.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 2126.7 MB from storage (0 major faults) for 74454.6 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2133 windows, avg 1.42 rows, 43.52 ms/window = run 41.07 (CUDA0 GPU-reach wait 19.05 + CPU experts 1.60) + commit 2.45 + emit 0.00; per layer-window: CPU experts 0.31, VRAM hits 5.44, PCIe 0.00; 14.7 rows/s over 206460 ms of wall time (admissions included)
+strata batch: slot 1 gave back 129045 tokens of this conversation (all it holds) in 380.3 ms
+strata serve: prompt 129046 tokens = 129045 reused + 1 read in 380 ms (2.6 tok/s), 1 generated in 39 ms (25.9 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 639014.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 68.7 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 129047 tokens (copied in 340.9 ms)
+strata serve: prompt 129047 tokens = 129046 reused + 1 read in 0 ms (20247.8 tok/s), 1 generated in 34 ms (29.3 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 639014.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 10 parts, the slots decoding 66693 ms between them
+strata batch: slot 0 takes 150946 tokens (copied in 536.8 ms)
+strata serve: prompt 150946 tokens = 0 reused + 150946 read in 205061 ms (736.1 tok/s), 1 generated in 35 ms (28.8 tok/s), drafts accepted 0 of 0, 10 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 731535.3 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 4291.5 MB from storage (6 major faults) for 92521.2 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2095 windows, avg 1.21 rows, 42.09 ms/window = run 40.00 (CUDA0 GPU-reach wait 25.94 + CPU experts 2.13) + commit 2.09 + emit 0.01; per layer-window: CPU experts 0.43, VRAM hits 7.43, PCIe 0.00; 11.2 rows/s over 227127 ms of wall time (admissions included)
+strata batch: slot 0 gave back 151394 tokens of this conversation (all it holds) in 567.2 ms
+strata serve: prompt 151395 tokens = 151394 reused + 1 read in 567 ms (1.8 tok/s), 1 generated in 43 ms (23.4 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 731535.3 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 39.1 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 151396 tokens (copied in 526.1 ms)
+strata serve: prompt 151396 tokens = 151395 reused + 1 read in 0 ms (18633.1 tok/s), 1 generated in 35 ms (28.9 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 731535.3 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 10 parts, the slots decoding 66704 ms between them
+strata batch: slot 1 takes 148017 tokens (copied in 517.2 ms)
+strata serve: prompt 148017 tokens = 0 reused + 148017 read in 202664 ms (730.4 tok/s), 1 generated in 35 ms (28.8 tok/s), drafts accepted 0 of 0, 10 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 819283.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 4072.4 MB from storage (25 major faults) for 87748.2 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2552 windows, avg 1.36 rows, 43.35 ms/window = run 41.01 (CUDA0 GPU-reach wait 21.60 + CPU experts 1.46) + commit 2.33 + emit 0.00; per layer-window: CPU experts 0.28, VRAM hits 6.14, PCIe 0.00; 14.0 rows/s over 247147 ms of wall time (admissions included)
+strata batch: slot 1 gave back 148930 tokens of this conversation (all it holds) in 563.2 ms
+strata serve: prompt 148931 tokens = 148930 reused + 1 read in 563 ms (1.8 tok/s), 1 generated in 39 ms (25.7 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 819283.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 76.7 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 148932 tokens (copied in 521.0 ms)
+strata serve: prompt 148932 tokens = 148931 reused + 1 read in 0 ms (23283.4 tok/s), 1 generated in 34 ms (29.3 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 819283.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.1 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 11 parts, the slots decoding 75281 ms between them
+strata batch: slot 0 takes 171719 tokens (copied in 550.5 ms)
+strata serve: prompt 171719 tokens = 0 reused + 171719 read in 234620 ms (731.9 tok/s), 1 generated in 35 ms (28.6 tok/s), drafts accepted 0 of 0, 11 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 920542.2 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 5102.5 MB from storage (32 major faults) for 101258.6 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2087 windows, avg 1.11 rows, 41.71 ms/window = run 39.78 (CUDA0 GPU-reach wait 29.64 + CPU experts 2.22) + commit 1.92 + emit 0.00; per layer-window: CPU experts 0.41, VRAM hits 8.42, PCIe 0.00; 9.4 rows/s over 246980 ms of wall time (admissions included)
+strata batch: slot 0 gave back 171962 tokens of this conversation (all it holds) in 619.8 ms
+strata serve: prompt 171963 tokens = 171962 reused + 1 read in 620 ms (1.6 tok/s), 1 generated in 43 ms (23.1 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 920542.2 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 18.5 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 171964 tokens (copied in 586.7 ms)
+strata serve: prompt 171964 tokens = 171963 reused + 1 read in 0 ms (18674.5 tok/s), 1 generated in 35 ms (28.9 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 920542.2 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 11 parts, the slots decoding 74900 ms between them
+strata batch: slot 1 takes 167881 tokens (copied in 533.0 ms)
+strata serve: prompt 167881 tokens = 0 reused + 167881 read in 230277 ms (729.0 tok/s), 1 generated in 34 ms (29.2 tok/s), drafts accepted 0 of 0, 11 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1011540.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 4723.5 MB from storage (0 major faults) for 90997.9 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2757 windows, avg 1.31 rows, 42.34 ms/window = run 40.13 (CUDA0 GPU-reach wait 23.24 + CPU experts 0.65) + commit 2.20 + emit 0.00; per layer-window: CPU experts 0.08, VRAM hits 6.81, PCIe 0.00; 13.2 rows/s over 272687 ms of wall time (admissions included)
+strata batch: slot 1 gave back 168736 tokens of this conversation (all it holds) in 606.6 ms
+strata serve: prompt 168737 tokens = 168736 reused + 1 read in 607 ms (1.6 tok/s), 1 generated in 39 ms (25.4 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1011540.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 70.3 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 168738 tokens (copied in 574.4 ms)
+strata serve: prompt 168738 tokens = 168737 reused + 1 read in 0 ms (19369.3 tok/s), 1 generated in 35 ms (28.9 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1011540.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 12 parts, the slots decoding 83625 ms between them
+strata batch: slot 0 takes 191266 tokens (copied in 684.4 ms)
+strata serve: prompt 191266 tokens = 0 reused + 191266 read in 263044 ms (727.1 tok/s), 1 generated in 35 ms (28.3 tok/s), drafts accepted 0 of 0, 12 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1131332.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 5771.1 MB from storage (0 major faults) for 119792.4 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2144 windows, avg 1.06 rows, 42.09 ms/window = run 40.25 (CUDA0 GPU-reach wait 31.50 + CPU experts 3.04) + commit 1.83 + emit 0.01; per layer-window: CPU experts 0.52, VRAM hits 8.85, PCIe 0.00; 8.4 rows/s over 270404 ms of wall time (admissions included)
+strata batch: slot 0 gave back 191400 tokens of this conversation (all it holds) in 724.7 ms
+strata serve: prompt 191401 tokens = 191400 reused + 1 read in 725 ms (1.4 tok/s), 1 generated in 41 ms (24.1 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1131332.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 10.5 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 191402 tokens (copied in 652.8 ms)
+strata serve: prompt 191402 tokens = 191401 reused + 1 read in 0 ms (17883.3 tok/s), 1 generated in 35 ms (28.3 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1131332.5 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 12 parts, the slots decoding 83503 ms between them
+strata batch: slot 1 takes 187422 tokens (copied in 593.8 ms)
+strata serve: prompt 187422 tokens = 0 reused + 187422 read in 258714 ms (724.4 tok/s), 1 generated in 35 ms (28.5 tok/s), drafts accepted 0 of 0, 12 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1233530.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 5349.9 MB from storage (40 major faults) for 102198.1 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2865 windows, avg 1.27 rows, 42.70 ms/window = run 40.54 (CUDA0 GPU-reach wait 24.67 + CPU experts 1.02) + commit 2.16 + emit 0.00; per layer-window: CPU experts 0.16, VRAM hits 7.08, PCIe 0.00; 12.2 rows/s over 298199 ms of wall time (admissions included)
+strata batch: slot 1 gave back 188211 tokens of this conversation (all it holds) in 685.3 ms
+strata serve: prompt 188212 tokens = 188211 reused + 1 read in 685 ms (1.5 tok/s), 1 generated in 44 ms (22.9 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1233530.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 62.5 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 188213 tokens (copied in 643.3 ms)
+strata serve: prompt 188213 tokens = 188212 reused + 1 read in 0 ms (18423.7 tok/s), 1 generated in 35 ms (28.7 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1233530.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata batch: 2208 windows, avg 1.00 rows, 41.80 ms/window = run 40.07 (CUDA0 GPU-reach wait 33.93 + CPU experts 3.08) + commit 1.73 + emit 0.01; per layer-window: CPU experts 0.54, VRAM hits 9.45, PCIe 0.00; 8.0 rows/s over 276671 ms of wall time (admissions included)
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 13 parts, the slots decoding 92255 ms between them
+strata batch: slot 0 takes 211376 tokens (copied in 648.0 ms)
+strata serve: prompt 211376 tokens = 0 reused + 211376 read in 293417 ms (720.4 tok/s), 1 generated in 36 ms (28.0 tok/s), drafts accepted 0 of 0, 13 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1361954.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 6399.4 MB from storage (0 major faults) for 128424.2 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 13 parts, the slots decoding 92169 ms between them
+strata batch: slot 1 takes 206584 tokens (copied in 703.7 ms)
+strata serve: prompt 206584 tokens = 0 reused + 206584 read in 287941 ms (717.5 tok/s), 1 generated in 35 ms (28.3 tok/s), drafts accepted 0 of 0, 13 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1474026.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 5940.1 MB from storage (0 major faults) for 112072.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 3002 windows, avg 1.24 rows, 42.94 ms/window = run 40.83 (CUDA0 GPU-reach wait 25.90 + CPU experts 1.22) + commit 2.11 + emit 0.00; per layer-window: CPU experts 0.20, VRAM hits 7.34, PCIe 0.00; 11.5 rows/s over 325443 ms of wall time (admissions included)
+strata batch: slot 1 gave back 207322 tokens of this conversation (all it holds) in 743.0 ms
+strata serve: prompt 207323 tokens = 207322 reused + 1 read in 743 ms (1.3 tok/s), 1 generated in 44 ms (22.7 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1474026.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 66.5 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 takes 207324 tokens (copied in 703.9 ms)
+strata serve: prompt 207324 tokens = 207323 reused + 1 read in 0 ms (14082.9 tok/s), 1 generated in 35 ms (28.4 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1474026.8 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 gave back 211371 tokens of this conversation (its turn checkpoint) in 710.1 ms
+strata batch: slot 0 takes 212847 tokens (copied in 749.8 ms)
+strata serve: prompt 212847 tokens = 211371 reused + 1476 read in 3070 ms (480.7 tok/s), 1 generated in 35 ms (28.4 tok/s), drafts accepted 0 of 0, 2 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1476276.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 4.4 MB from storage (4 major faults) for 2249.8 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2262 windows, avg 2.00 rows, 49.92 ms/window = run 46.49 (CUDA0 GPU-reach wait 0.00 + CPU experts 0.00) + commit 3.42 + emit 0.00; per layer-window: CPU experts 0.00, VRAM hits 0.00, PCIe 0.00; 38.7 rows/s over 116781 ms of wall time (admissions included)
+strata batch: slot 0 gave back 215108 tokens of this conversation (all it holds) in 774.8 ms
+strata serve: prompt 215109 tokens = 215108 reused + 1 read in 775 ms (1.3 tok/s), 1 generated in 40 ms (25.0 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1476276.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 171.8 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 215110 tokens (copied in 734.8 ms)
+strata serve: prompt 215110 tokens = 215109 reused + 1 read in 0 ms (14930.5 tok/s), 1 generated in 36 ms (28.1 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1476276.6 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.1 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata batch: 736 windows, avg 1.00 rows, 41.89 ms/window = run 40.17 (CUDA0 GPU-reach wait 34.44 + CPU experts 2.67) + commit 1.72 + emit 0.01; per layer-window: CPU experts 0.56, VRAM hits 9.43, PCIe 0.00; 7.2 rows/s over 101756 ms of wall time (admissions included)
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 6 parts, the slots decoding 30797 ms between them
+strata batch: slot 1 takes 226677 tokens (copied in 730.2 ms)
+strata serve: prompt 226677 tokens = 0 reused + 226677 read in 247383 ms (916.3 tok/s), 1 generated in 35 ms (28.2 tok/s), drafts accepted 0 of 0, 14 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1587360.1 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 5565.1 MB from storage (26 major faults) for 111083.5 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata verify: layers [0, 48) have experts out of VRAM (a prompt loan, a shrink or a swap): the doorbell graph runs the windows
+strata verify: layers [0, 48) are 100% VRAM resident again: the zero-doorbell graph
+strata batch: the prompt was read in 14 parts, the slots decoding 101515 ms between them
+strata batch: slot 0 takes 214288 tokens (copied in 653.9 ms)
+strata serve: prompt 214288 tokens = 0 reused + 214288 read in 307059 ms (697.9 tok/s), 1 generated in 36 ms (28.1 tok/s), drafts accepted 0 of 0, 14 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1720466.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 6558.7 MB from storage (28 major faults) for 133106.3 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2856 windows, avg 1.16 rows, 43.38 ms/window = run 41.39 (CUDA0 GPU-reach wait 29.21 + CPU experts 2.30) + commit 1.99 + emit 0.01; per layer-window: CPU experts 0.41, VRAM hits 8.02, PCIe 0.00; 10.0 rows/s over 330147 ms of wall time (admissions included)
+strata batch: slot 0 gave back 214736 tokens of this conversation (all it holds) in 764.0 ms
+strata serve: prompt 214737 tokens = 214736 reused + 1 read in 764 ms (1.3 tok/s), 1 generated in 44 ms (22.6 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1720466.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 36.2 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 0 takes 214738 tokens (copied in 723.8 ms)
+strata serve: prompt 214738 tokens = 214737 reused + 1 read in 0 ms (15022.2 tok/s), 1 generated in 35 ms (28.4 tok/s), drafts accepted 0 of 0, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1720466.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 0.0 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: slot 1 gave back 226672 tokens of this conversation (its turn checkpoint) in 762.6 ms
+strata batch: slot 1 takes 229368 tokens (copied in 799.4 ms)
+strata serve: prompt 229368 tokens = 226672 reused + 2696 read in 4618 ms (583.9 tok/s), 1 generated in 35 ms (28.4 tok/s), drafts accepted 0 of 0, 2 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1723724.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 30.7 MB from storage (0 major faults) for 3258.0 MB of expert reads
+strata serve: lookup chain: 0 of 1 windows, 0 of 0 chained drafts accepted
+strata batch: 2552 windows, avg 2.00 rows, 50.16 ms/window = run 46.74 (CUDA0 GPU-reach wait 0.00 + CPU experts 0.00) + commit 3.42 + emit 0.00; per layer-window: CPU experts 0.00, VRAM hits 0.00, PCIe 0.00; 38.2 rows/s over 133488 ms of wall time (admissions included)
+strata batch: slot 1 gave back 231919 tokens of this conversation (all it holds) in 782.3 ms
+strata verify: capturing the 2-token window (20125 MiB of VRAM free)
+strata verify: captured the 2-token window (upload no error, sync no error)
+strata verify: capturing the 3-token window (20117 MiB of VRAM free)
+strata verify: captured the 3-token window (upload no error, sync no error)
+strata serve: prompt 231920 tokens = 231919 reused + 1 read in 782 ms (1.3 tok/s), 448 generated in 13063 ms (34.3 tok/s), drafts accepted 180 of 368, 0 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1723724.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 220.6 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: suffix drafts: 20 windows, 31 of 60 drafts accepted
+strata serve: lookup chain: 23 of 268 windows, 4 of 33 chained drafts accepted
+strata batch: slot 1 gave back 229363 tokens of this conversation (its turn checkpoint) in 759.1 ms
+strata verify: capturing the 7-token window (20111 MiB of VRAM free)
+strata verify: captured the 7-token window (upload no error, sync no error)
+strata serve: prompt 229400 tokens = 229363 reused + 37 read in 1187 ms (31.2 tok/s), 3000 generated in 79283 ms (37.8 tok/s), drafts accepted 1426 of 2517, 2 checkpoints
+strata serve: expert tiers: GPU 0 hits this request; since the start RAM 0 blobs, files 0 blobs 1723724.4 MB read (the GGUF in place)
+strata serve: file tier I/O this request: the OS read 204.2 MB from storage (0 major faults) for 0.0 MB of expert reads
+strata serve: suffix drafts: 50 windows, 73 of 155 drafts accepted
+strata serve: lookup chain: 76 of 1574 windows, 40 of 122 chained drafts accepted

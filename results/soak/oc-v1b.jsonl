@@ -1,0 +1,6 @@
+{"event": "start", "ver": "V1", "wrapper": "<HOME>/oc/oc1", "cwd": "<HOME>/oc/target1", "jst": "2026-10-08 01:46:29 JST"}
+{"event": "prompt", "n": 4, "rc": 0, "elapsed_s": 753.2, "ctx_before": 0, "ctx_after": 97254, "json_lines": 61, "tool_events": 40, "err": "", "jst": "2026-10-08 01:59:02 JST"}
+{"event": "prompt", "n": 5, "rc": 0, "elapsed_s": 296.6, "ctx_before": 97254, "ctx_after": 132001, "json_lines": 60, "tool_events": 42, "err": "", "jst": "2026-10-08 02:03:59 JST"}
+{"event": "prompt", "n": 6, "rc": 0, "elapsed_s": 195.9, "ctx_before": 132001, "ctx_after": 164070, "json_lines": 62, "tool_events": 42, "err": "", "jst": "2026-10-08 02:07:14 JST"}
+{"event": "prompt", "n": 7, "rc": 0, "elapsed_s": 712.9, "ctx_before": 164070, "ctx_after": 170557, "json_lines": 71, "tool_events": 44, "err": "", "jst": "2026-10-08 02:19:07 JST"}
+{"event": "prompt", "n": 8, "rc": 0, "elapsed_s": 387.7, "ctx_before": 170557, "ctx_after": 95154, "json_lines": 58, "tool_events": 32, "err": "", "jst": "2026-10-08 02:25:35 JST"}

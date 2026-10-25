@@ -1,0 +1,12 @@
+{"event": "start", "ver": "V1", "wrapper": "<HOME>/oc/oc1", "cwd": "<HOME>/oc/target1", "jst": "2026-10-08 01:24:37 JST"}
+{"event": "prompt", "n": 1, "rc": 0, "elapsed_s": 375.7, "ctx_before": 12025, "ctx_after": 67411, "json_lines": 135, "tool_events": 116, "err": "", "jst": "2026-10-08 01:30:53 JST"}
+{"event": "prompt", "n": 2, "rc": 0, "elapsed_s": 319.4, "ctx_before": 67411, "ctx_after": 113633, "json_lines": 76, "tool_events": 70, "err": "", "jst": "2026-10-08 01:36:13 JST"}
+{"event": "prompt", "n": 3, "rc": 0, "elapsed_s": 365.4, "ctx_before": 113633, "ctx_after": 171605, "json_lines": 97, "tool_events": 80, "err": "", "jst": "2026-10-08 01:42:18 JST"}
+{"event": "prompt", "n": 4, "rc": 1, "elapsed_s": 168.9, "ctx_before": 171605, "ctx_after": 229004, "json_lines": 34, "tool_events": 22, "err": "", "jst": "2026-10-08 01:45:07 JST"}
+{"event": "prompt", "n": 5, "rc": 1, "elapsed_s": 2.8, "ctx_before": 229004, "ctx_after": 229004, "json_lines": 1, "tool_events": 0, "err": "", "jst": "2026-10-08 01:45:10 JST"}
+{"event": "prompt", "n": 6, "rc": 1, "elapsed_s": 2.8, "ctx_before": 229004, "ctx_after": 229004, "json_lines": 1, "tool_events": 0, "err": "", "jst": "2026-10-08 01:45:12 JST"}
+{"event": "prompt", "n": 7, "rc": 1, "elapsed_s": 2.8, "ctx_before": 229004, "ctx_after": 229004, "json_lines": 1, "tool_events": 0, "err": "", "jst": "2026-10-08 01:45:15 JST"}
+{"event": "prompt", "n": 8, "rc": 1, "elapsed_s": 2.8, "ctx_before": 229004, "ctx_after": 229004, "json_lines": 1, "tool_events": 0, "err": "", "jst": "2026-10-08 01:45:18 JST"}
+{"event": "prompt", "n": 9, "rc": 1, "elapsed_s": 2.8, "ctx_before": 229004, "ctx_after": 229004, "json_lines": 1, "tool_events": 0, "err": "", "jst": "2026-10-08 01:45:21 JST"}
+{"event": "prompt", "n": 10, "rc": 1, "elapsed_s": 2.8, "ctx_before": 229004, "ctx_after": 229004, "json_lines": 1, "tool_events": 0, "err": "", "jst": "2026-10-08 01:45:23 JST"}
+{"event": "prompt", "n": 11, "rc": 1, "elapsed_s": 2.8, "ctx_before": 229004, "ctx_after": 229004, "json_lines": 1, "tool_events": 0, "err": "", "jst": "2026-10-08 01:45:26 JST"}

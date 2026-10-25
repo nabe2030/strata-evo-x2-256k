@@ -1,0 +1,37 @@
+{
+  "label": "2512",
+  "cold": {
+    "prompt_ms": 3095.8,
+    "prompt_n": 2535,
+    "cache_n": 0,
+    "predicted_ms": 317.8,
+    "predicted_n": 10,
+    "wall_clock_s": 3.43,
+    "usage": {
+      "prompt_tokens": 2535,
+      "completion_tokens": 10,
+      "total_tokens": 2545,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "content": "マーケ戦略とJavaとアセンブリ"
+  },
+  "warm": {
+    "prompt_ms": 53.9,
+    "prompt_n": 7,
+    "cache_n": 2528,
+    "predicted_ms": 305.6,
+    "predicted_n": 10,
+    "wall_clock_s": 0.377,
+    "usage": {
+      "prompt_tokens": 2535,
+      "completion_tokens": 10,
+      "total_tokens": 2545,
+      "prompt_tokens_details": {
+        "cached_tokens": 2528
+      }
+    },
+    "content": "マーケ戦略とJavaとアセンブリ"
+  }
+}
