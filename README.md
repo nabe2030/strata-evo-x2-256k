@@ -4,7 +4,9 @@ Running **Strata v0.1.40.2** (HIP) with **Qwen3.8-Flash-Next UD-IQ4_XS** at **25
 
 Everything here was **measured on one machine with Strata v0.1.40.2** (commit `e8ca9afd03d839d4f8dbbe82dffce7f8a3bafd7a`). Newer Strata versions behave differently in places (see [Notes on newer versions](#notes-on-newer-versions)); the numbers below are not updated for them.
 
-This repository is an independent user report. It is not affiliated with the Strata project. The earlier llama.cpp (Vulkan) article it follows up on is linked from the author's article, not repeated here.
+This repository is an independent user report. It is not affiliated with the Strata project.
+
+Japanese article (Qiita): https://qiita.com/nabe2030/items/2c29db3e0c69552e2d80 — it also links the earlier llama.cpp (Vulkan) article this one follows up on.
 
 ## TL;DR
 
